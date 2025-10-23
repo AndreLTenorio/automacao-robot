@@ -1,58 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.9 on win32)" generated="2025-10-22T01:47:02.364493" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.13.9 on win32)" generated="2025-10-23T00:06:02.855917" rpa="false" schemaversion="5">
 <suite id="s1" name="Amazon Testes" source="C:\CursoUdemy\RobotFramework\WebTesting\automacao-robot\amazon_testes.robot">
-<test id="s1-t1" name="Caso de Teste 01 - Acesso ao menu &quot;Eletrônicos&quot;" line="8">
-<kw name="Abrir o navegador" type="SETUP">
-<msg time="2025-10-22T01:47:02.399372" level="FAIL">No keyword with name 'Abrir o navegador' found.</msg>
-<status status="FAIL" start="2025-10-22T01:47:02.399334" elapsed="0.000092">No keyword with name 'Abrir o navegador' found.</status>
+<test id="s1-t1" name="Caso de Teste 01 - Acesso ao menu &quot;Eletrônicos&quot;" line="9">
+<kw name="Abrir o navegador" owner="amazon_resources" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-23T00:06:03.183049" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-23T00:06:03.182850" elapsed="1.199513"/>
 </kw>
-<kw name="Fechar o navegador" type="TEARDOWN">
-<msg time="2025-10-22T01:47:02.400702" level="FAIL">No keyword with name 'Fechar o navegador' found.</msg>
-<status status="FAIL" start="2025-10-22T01:47:02.400671" elapsed="0.000067">No keyword with name 'Fechar o navegador' found.</status>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-23T00:06:04.382631" elapsed="0.034276"/>
+</kw>
+<status status="PASS" start="2025-10-23T00:06:03.181975" elapsed="1.235185"/>
+</kw>
+<kw name="Acessar a home page do site Amazon.com.br" owner="amazon_resources">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-23T00:06:04.418336" level="INFO">Opening url 'https://www.amazon.com.br'</msg>
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-23T00:06:04.418082" elapsed="2.347909"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-10-23T00:06:12.193961" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-10-23T00:06:12.194191" level="FAIL">Element '[href='/Eletronicos-e-Tecnologia/b/?ie=UTF8&amp;node=16209062011&amp;ref_=nav_cs_electronics']' not visible after 5 seconds.</msg>
+<arg>locator=${MENU_ELETRONICOS}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-10-23T00:06:06.766232" elapsed="5.431037">Element '[href='/Eletronicos-e-Tecnologia/b/?ie=UTF8&amp;node=16209062011&amp;ref_=nav_cs_electronics']' not visible after 5 seconds.</status>
+</kw>
+<status status="FAIL" start="2025-10-23T00:06:04.417648" elapsed="7.779866">Element '[href='/Eletronicos-e-Tecnologia/b/?ie=UTF8&amp;node=16209062011&amp;ref_=nav_cs_electronics']' not visible after 5 seconds.</status>
 </kw>
 <doc>Esse teste verifica o menu eletrônicos do site Amazon.com.br
 e verifica a categoria Computadores e Informática</doc>
 <tag>categorias</tag>
 <tag>menus</tag>
-<status status="FAIL" start="2025-10-22T01:47:02.397601" elapsed="0.003249">Setup failed:
-No keyword with name 'Abrir o navegador' found.
-
-Also teardown failed:
-No keyword with name 'Fechar o navegador' found.</status>
-</test>
-<test id="s1-t2" name="Caso de Testes 02 - Pesquisa de um Produto" line="20">
-<kw name="Abrir o navegador" type="SETUP">
-<msg time="2025-10-22T01:47:02.402680" level="FAIL">No keyword with name 'Abrir o navegador' found.</msg>
-<status status="FAIL" start="2025-10-22T01:47:02.402651" elapsed="0.000064">No keyword with name 'Abrir o navegador' found.</status>
-</kw>
-<kw name="Fechar o navegador" type="TEARDOWN">
-<msg time="2025-10-22T01:47:02.403630" level="FAIL">No keyword with name 'Fechar o navegador' found.</msg>
-<status status="FAIL" start="2025-10-22T01:47:02.403604" elapsed="0.000056">No keyword with name 'Fechar o navegador' found.</status>
-</kw>
-<doc>Esse teste verifica a busca de um produto</doc>
-<tag>busca_produtos</tag>
-<tag>lista_busca</tag>
-<status status="FAIL" start="2025-10-22T01:47:02.401475" elapsed="0.002285">Setup failed:
-No keyword with name 'Abrir o navegador' found.
-
-Also teardown failed:
-No keyword with name 'Fechar o navegador' found.</status>
+<status status="FAIL" start="2025-10-23T00:06:03.180914" elapsed="9.017023">Element '[href='/Eletronicos-e-Tecnologia/b/?ie=UTF8&amp;node=16209062011&amp;ref_=nav_cs_electronics']' not visible after 5 seconds.</status>
 </test>
 <doc>Essa suíte testa o site da Amazon.com.br</doc>
-<status status="FAIL" start="2025-10-22T01:47:02.365926" elapsed="0.038458"/>
+<status status="FAIL" start="2025-10-23T00:06:02.857448" elapsed="9.341572"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="2" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">busca_produtos</stat>
 <stat pass="0" fail="1" skip="0">categorias</stat>
-<stat pass="0" fail="1" skip="0">lista_busca</stat>
 <stat pass="0" fail="1" skip="0">menus</stat>
 </tag>
 <suite>
-<stat name="Amazon Testes" id="s1" pass="0" fail="2" skip="0">Amazon Testes</stat>
+<stat name="Amazon Testes" id="s1" pass="0" fail="1" skip="0">Amazon Testes</stat>
 </suite>
 </statistics>
 <errors>
