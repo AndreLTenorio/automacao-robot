@@ -5,7 +5,7 @@ Library         SeleniumLibrary
 *** Variables ***
 ${URL}            https://www.amazon.com.br
 ${MENU_ELETRONICOS}    (//a[contains(text(),'Eletrônicos')])[1]
-${HEADER_ELETRÔNICOS}    text:Eletrônicos e Tecnologia
+${HEADER_ELETRÔNICOS}    (//span[contains(text(),'Eletrônicos e Tecnologia')])[1]
 ${TEXTO_HEADER_ELETRÔNICOS}    Eletrônicos e Tecnologia | Amazon.com.br
 
 *** Keywords ***
@@ -26,4 +26,8 @@ Entrar no menu "Eletrônicos"
     
 
 Verificar se aparece a frase "Eletrônicos e Tecnologia"
+    Wait Until page contains    ${TEXTO_HEADER_ELETRÔNICOS} 
+    Wait Until Element Is Visible    locator=${HEADER_ELETRÔNICOS}
+ 
+Verificar se o título da página fica "Eletrônicos e Tecnologia | Amazon.com.br"    
     Title Should Be    ${TEXTO_HEADER_ELETRÔNICOS}
