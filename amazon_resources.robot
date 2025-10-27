@@ -6,7 +6,7 @@ Library         SeleniumLibrary
 ${URL}            https://www.amazon.com.br
 ${MENU_ELETRONICOS}    (//a[contains(text(),'Eletrônicos')])[1]
 ${HEADER_ELETRÔNICOS}    (//span[contains(text(),'Eletrônicos e Tecnologia')])[1]
-${TEXTO_HEADER_ELETRÔNICOS}    Eletrônicos e Tecnologia | Amazon.com.br
+
 
 *** Keywords ***
 Abrir o navegador    
@@ -15,6 +15,7 @@ Abrir o navegador
 
 
 Fechar o navegador
+    Capture Page Screenshot
     Close Browser
 
 Acessar a home page do site Amazon.com.br
@@ -25,9 +26,21 @@ Entrar no menu "Eletrônicos"
     Click Element    locator=${MENU_ELETRONICOS}
     
 
-Verificar se aparece a frase "Eletrônicos e Tecnologia"
-    Wait Until page contains    ${TEXTO_HEADER_ELETRÔNICOS} 
+Verificar se aparece a frase "${FRASE}"
+    Wait Until page contains    ${FRASE}
     Wait Until Element Is Visible    locator=${HEADER_ELETRÔNICOS}
  
-Verificar se o título da página fica "Eletrônicos e Tecnologia | Amazon.com.br"    
-    Title Should Be    ${TEXTO_HEADER_ELETRÔNICOS}
+Verificar se o título da página fica "${TITULO}"    
+    Title Should Be    title=${TITULO}
+
+Verificar se aparece a categoria "${NOME_CATEGORIA}"
+    Element Should Be Visible    (//span[@class='a-size-base-plus'][normalize-space()='${NOME_CATEGORIA}'])[1]
+
+Digitar o nome de produto "${PRODUTO}" no campo de pesquisa
+    Input Text    locator=twotabsearchtextbox    text=${PRODUTO}
+
+Clicar no botão de pesquisa
+    Click Element    locator=nav-search-submit-button
+
+Verificar o resultado da pesquisa se está listando o produto "${PRODUTO}"
+    Wait Until Element Is Visible    locator=(//span[normalize-space()='${PRODUTO}'])[1]
