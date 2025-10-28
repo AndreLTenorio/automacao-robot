@@ -44,3 +44,5 @@ Clicar no botão de pesquisa
 
 Verificar o resultado da pesquisa se está listando o produto "${PRODUTO}"
     Wait Until Element Is Visible    locator=(//span[normalize-space()='${PRODUTO}'])[1]
+
+    
